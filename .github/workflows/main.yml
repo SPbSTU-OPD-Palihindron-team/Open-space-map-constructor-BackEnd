@@ -34,7 +34,7 @@ jobs:
         run: mvn package -Pnative
         
       - name: Docker build image
-        run: docker build -f src/main/docker/Dockerfile.native -t akaka4ka/osmc-back-end .
+        run: docker build -t akaka4ka/osmc-back-end .
         
       - name: Publish docker image to Docker Hub
         run: docker push akaka4ka/osmc-back-end:latest
