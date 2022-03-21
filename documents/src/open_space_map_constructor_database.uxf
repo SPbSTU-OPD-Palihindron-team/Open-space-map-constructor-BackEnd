@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>416</y>
+      <w>112</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Buildings
+bg=yellow
+--
++pk_building_id
++address
++number_floors
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>432</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>104</x>
+      <y>144</y>
+      <w>112</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>Employees
+bg=yellow
+--
++pk_employee_id
++first_name
++second_name
++patronymic
++email
++number_telephone
++employee_status
++specialization
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>128</y>
+      <w>104</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Timetable
+bg=yellow
+--
++pk_session_id
++fk_employee_id
++fk_zone_id
++beginning_session
++duration_session
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>152</y>
+      <w>96</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>176</y>
+      <w>72</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=
+</panel_attributes>
+    <additional_attributes>20.0;10.0;70.0;10.0;70.0;320.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>232</y>
+      <w>128</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Registrated users
+bg=yellow
+--
++pk_user_id
++login
++pass
++accessibility
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>408</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Items
+bg=yellow
+--
++pk_item_id
++fk_zone_id
++fk_itemType_id
++pos
++angle
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>408</y>
+      <w>112</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Zones
+bg=yellow
+--
++pk_zone_id
++fk_building_id
++zone_floor
++form
++number_zone
++zone_type
++description
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>432</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ItemType
+bg=yellow
+fg=black
+--
++pk_itemType_id
++item_name
++placement
++form
++pictureLink
++descprition
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>456</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>296</y>
+      <w>160</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+StatusType
+bg=orange
+fg=black
+--
++FREE
++EMPLOYED
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>64</x>
+      <y>240</y>
+      <w>56</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>424</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>440</y>
+      <w>136</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+PlacementType
+bg=orange
+fg=black
+--
++ON_FLOOR
++ON_ITEM
++ON_WALL
++IN_WALL</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>472</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>872</x>
+      <y>152</y>
+      <w>192</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+Potential names of itemName
++MFP
++ATM
++VENDING
++COFFEE_MACHINE
++FIRE_HYDRANT
++WORKPLACE
++CONFERENCE_TABLE
++DINING_ROOM_TABLE
++CAFE_TABLE
++GYM_SPOT
++MEETING_ROOM
++DOOR
++WINDOW
++LED_PANEL
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>368</y>
+      <w>64</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;80.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>552</y>
+      <w>112</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Walls
+bg=yellow
+--
++pk_wall_id
++fk_building_id
++wall_floor
++color
++form</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>440</y>
+      <w>112</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;190.0;120.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>472</x>
+      <y>576</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+If a zone is divided
+with wall objects, then such
+a case should be checked
+separately by dividing the zone</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>624</y>
+      <w>112</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>288</y>
+      <w>104</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+ZoneType
+bg=orange
+fg=black
+--
++CABINET
++OPEN_AREA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>352</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>296</y>
+      <w>88</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>688</x>
+      <y>264</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+AccessibilityType
+bg=orange
+fg=black
+--
++ADMIN
++USER</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
