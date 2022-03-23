@@ -151,7 +151,6 @@ bg=yellow
 --
 +pk_zone_id
 +fk_floor_id
-+zone_floor
 +form
 +number_zone
 +zone_type
