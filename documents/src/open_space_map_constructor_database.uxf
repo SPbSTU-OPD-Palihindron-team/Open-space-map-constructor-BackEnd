@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>14</x>
-      <y>406</y>
+      <x>28</x>
+      <y>378</y>
       <w>98</w>
       <h>98</h>
     </coordinates>
@@ -15,15 +15,14 @@ bg=yellow
 +pk_building_id
 +address
 +number_floors
-
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>392</y>
+      <x>294</x>
+      <y>364</y>
       <w>126</w>
       <h>35</h>
     </coordinates>
@@ -36,8 +35,8 @@ m2=1..*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>231</x>
-      <y>154</y>
+      <x>245</x>
+      <y>126</y>
       <w>98</w>
       <h>119</h>
     </coordinates>
@@ -50,7 +49,6 @@ bg=yellow
 +patronymic
 +email
 +telephone_number
-+status_type
 +specialization
 </panel_attributes>
     <additional_attributes/>
@@ -58,8 +56,8 @@ bg=yellow
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
-      <y>140</y>
+      <x>420</x>
+      <y>112</y>
       <w>119</w>
       <h>105</h>
     </coordinates>
@@ -72,15 +70,14 @@ bg=yellow
 +start_time
 +end_time
 +description
-
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>322</x>
-      <y>161</y>
+      <x>336</x>
+      <y>133</y>
       <w>98</w>
       <h>35</h>
     </coordinates>
@@ -93,8 +90,8 @@ m2=1..*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>182</y>
+      <x>497</x>
+      <y>154</y>
       <w>91</w>
       <h>224</h>
     </coordinates>
@@ -107,8 +104,8 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>588</x>
-      <y>252</y>
+      <x>602</x>
+      <y>224</y>
       <w>112</w>
       <h>70</h>
     </coordinates>
@@ -125,8 +122,8 @@ bg=yellow
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>567</x>
-      <y>364</y>
+      <x>581</x>
+      <y>336</y>
       <w>91</w>
       <h>112</h>
     </coordinates>
@@ -144,8 +141,8 @@ bg=yellow
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>371</y>
+      <x>406</x>
+      <y>343</y>
       <w>98</w>
       <h>119</h>
     </coordinates>
@@ -166,8 +163,8 @@ bg=yellow
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>742</x>
-      <y>392</y>
+      <x>756</x>
+      <y>364</y>
       <w>140</w>
       <h>105</h>
     </coordinates>
@@ -181,17 +178,14 @@ fg=black
 +form
 +picture_link
 +descprition
-
-
-
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>651</x>
-      <y>406</y>
+      <x>665</x>
+      <y>378</y>
       <w>105</w>
       <h>28</h>
     </coordinates>
@@ -201,28 +195,10 @@ m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>189</x>
-      <y>287</y>
-      <w>140</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
-status_type
-bg=orange
-fg=black
---
-+FREE
-+EMPLOYED
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>392</y>
+      <x>497</x>
+      <y>364</y>
       <w>98</w>
       <h>28</h>
     </coordinates>
@@ -234,8 +210,8 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>917</x>
-      <y>476</y>
+      <x>931</x>
+      <y>448</y>
       <w>119</w>
       <h>91</h>
     </coordinates>
@@ -247,14 +223,15 @@ fg=black
 +ON_FLOOR
 +ON_ITEM
 +ON_WALL
-+IN_WALL</panel_attributes>
++IN_WALL
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>875</x>
-      <y>427</y>
+      <x>889</x>
+      <y>399</y>
       <w>77</w>
       <h>63</h>
     </coordinates>
@@ -264,8 +241,8 @@ fg=black
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>910</x>
-      <y>175</y>
+      <x>924</x>
+      <y>147</y>
       <w>168</w>
       <h>196</h>
     </coordinates>
@@ -292,8 +269,8 @@ Potential names of item_name:
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>875</x>
-      <y>364</y>
+      <x>889</x>
+      <y>336</y>
       <w>49</w>
       <h>42</h>
     </coordinates>
@@ -303,8 +280,8 @@ Potential names of item_name:
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>511</y>
+      <x>406</x>
+      <y>483</y>
       <w>98</w>
       <h>84</h>
     </coordinates>
@@ -315,14 +292,15 @@ bg=yellow
 +fk_floor_id
 +wall_floor
 +color
-+form</panel_attributes>
++form
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>413</y>
+      <x>294</x>
+      <y>385</y>
       <w>126</w>
       <h>154</h>
     </coordinates>
@@ -334,8 +312,8 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>546</x>
-      <y>532</y>
+      <x>560</x>
+      <y>504</y>
       <w>147</w>
       <h>84</h>
     </coordinates>
@@ -344,14 +322,15 @@ bg=blue
 If a zone is divided
 with wall objects, then such
 a case should be checked
-separately by dividing the zone.</panel_attributes>
+separately by dividing the zone.
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>483</x>
-      <y>574</y>
+      <x>497</x>
+      <y>546</y>
       <w>77</w>
       <h>21</h>
     </coordinates>
@@ -361,8 +340,8 @@ separately by dividing the zone.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>399</x>
-      <y>280</y>
+      <x>469</x>
+      <y>252</y>
       <w>91</w>
       <h>63</h>
     </coordinates>
@@ -378,19 +357,19 @@ fg=black
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>336</y>
-      <w>21</w>
-      <h>49</h>
+      <x>434</x>
+      <y>287</y>
+      <w>49</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0;50.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>308</y>
+      <x>707</x>
+      <y>280</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -400,8 +379,8 @@ fg=black
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>749</x>
-      <y>280</y>
+      <x>763</x>
+      <y>252</y>
       <w>119</w>
       <h>56</h>
     </coordinates>
@@ -411,14 +390,15 @@ bg=orange
 fg=black
 --
 +ADMIN
-+USER</panel_attributes>
++USER
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>392</y>
+      <x>203</x>
+      <y>364</y>
       <w>98</w>
       <h>98</h>
     </coordinates>
@@ -429,15 +409,14 @@ bg=yellow
 +fk_building_id
 +number_floor
 +floor_type
-
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>105</x>
-      <y>413</y>
+      <x>119</x>
+      <y>385</y>
       <w>98</w>
       <h>35</h>
     </coordinates>
@@ -450,8 +429,8 @@ m2=1..*
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>140</x>
-      <y>525</y>
+      <x>154</x>
+      <y>497</y>
       <w>119</w>
       <h>63</h>
     </coordinates>
@@ -468,8 +447,8 @@ fg=black
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>154</x>
-      <y>441</y>
+      <x>168</x>
+      <y>413</y>
       <w>49</w>
       <h>98</h>
     </coordinates>
@@ -479,19 +458,8 @@ fg=black
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>322</x>
-      <y>238</y>
-      <w>49</w>
-      <h>84</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0;50.0;100.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>182</x>
-      <y>252</y>
+      <x>196</x>
+      <y>224</y>
       <w>63</w>
       <h>21</h>
     </coordinates>
@@ -501,8 +469,8 @@ fg=black
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>42</x>
-      <y>224</y>
+      <x>56</x>
+      <y>196</y>
       <w>147</w>
       <h>56</h>
     </coordinates>
@@ -510,14 +478,15 @@ fg=black
 bg=blue
 Field "specialization" contains
 information about employee's
-profession.</panel_attributes>
+profession.
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>581</x>
-      <y>126</y>
+      <x>595</x>
+      <y>98</y>
       <w>140</w>
       <h>77</h>
     </coordinates>
@@ -525,14 +494,15 @@ profession.</panel_attributes>
 bg=blue
 There may be such situations
 when several employees
-participate in one session.</panel_attributes>
+participate in one session.
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
-      <y>168</y>
+      <x>532</x>
+      <y>140</y>
       <w>77</w>
       <h>21</h>
     </coordinates>
