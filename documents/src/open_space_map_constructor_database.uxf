@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>28</x>
+      <y>378</y>
+      <w>98</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>building
+bg=yellow
+--
++pk_building_id
++address
++number_floors
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>364</y>
+      <w>126</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>245</x>
+      <y>126</y>
+      <w>98</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>employee
+bg=yellow
+--
++pk_employee_id
++first_name
++second_name
++patronymic
++email
++telephone_number
++specialization
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>112</y>
+      <w>119</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>schedule
+bg=yellow
+--
++pk_session_id
++array&lt;fk_employee_id&gt;
++fk_zone_id
++start_time
++end_time
++description
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>133</y>
+      <w>98</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..*
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>154</y>
+      <w>91</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1..*
+m2=1
+</panel_attributes>
+    <additional_attributes>60.0;10.0;110.0;10.0;110.0;290.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>224</y>
+      <w>112</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>registered_user
+bg=yellow
+--
++pk_user_id
++login
++pass
++accessibility_type
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>581</x>
+      <y>336</y>
+      <w>91</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>item
+bg=yellow
+--
++pk_item_id
++fk_zone_id
++fk_item_type_id
++pos
++angle
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>406</x>
+      <y>343</y>
+      <w>98</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>zone
+bg=yellow
+--
++pk_zone_id
++fk_floor_id
++form
++number_zone
++zone_type
++zone_name
++description
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>364</y>
+      <w>140</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>item_type
+bg=yellow
+fg=black
+--
++pk_item_type_id
++item_name
++placement_type
++form
++picture_link
++descprition
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>378</y>
+      <w>105</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>364</y>
+      <w>98</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>931</x>
+      <y>448</y>
+      <w>119</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+placement_type
+bg=orange
+fg=black
+--
++ON_FLOOR
++ON_ITEM
++ON_WALL
++IN_WALL
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>889</x>
+      <y>399</y>
+      <w>77</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0;90.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>924</x>
+      <y>147</y>
+      <w>168</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+Potential names of item_name:
++MFP
++ATM
++VENDING
++COFFEE_MACHINE
++FIRE_HYDRANT
++WORKPLACE
++CONFERENCE_TABLE
++DINING_ROOM_TABLE
++CAFE_TABLE
++GYM_SPOT
++MEETING_ROOM
++DOOR
++WINDOW
++LED_PANEL
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>889</x>
+      <y>336</y>
+      <w>49</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;40.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>406</x>
+      <y>483</y>
+      <w>98</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>wall
+bg=yellow
+--
++pk_wall_id
++fk_floor_id
++wall_floor
++color
++form
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>294</x>
+      <y>385</y>
+      <w>126</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..*</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;190.0;160.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>560</x>
+      <y>504</y>
+      <w>147</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+If a zone is divided
+with wall objects, then such
+a case should be checked
+separately by dividing the zone.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>497</x>
+      <y>546</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>469</x>
+      <y>252</y>
+      <w>91</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+zone_type
+bg=orange
+fg=black
+--
++CABINET
++OPEN_AREA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>434</x>
+      <y>287</y>
+      <w>49</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>707</x>
+      <y>280</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>763</x>
+      <y>252</y>
+      <w>119</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+accessibility_type
+bg=orange
+fg=black
+--
++ADMIN
++USER
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>203</x>
+      <y>364</y>
+      <w>98</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>floor
+bg=yellow
+--
++pk_floor_id
++fk_building_id
++number_floor
++floor_type
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>119</x>
+      <y>385</y>
+      <w>98</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..*
+</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>154</x>
+      <y>497</y>
+      <w>119</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+floor_type
+bg=orange
+fg=black
+--
++TECHNICAL
++OFFICE
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>413</y>
+      <w>49</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>196</x>
+      <y>224</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>56</x>
+      <y>196</y>
+      <w>147</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+Field "specialization" contains
+information about employee's
+profession.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>595</x>
+      <y>98</y>
+      <w>140</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Note..
+bg=blue
+There may be such situations
+when several employees
+participate in one session.
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>532</x>
+      <y>140</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+</diagram>
