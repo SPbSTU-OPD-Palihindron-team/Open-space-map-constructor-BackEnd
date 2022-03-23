@@ -5,14 +5,14 @@ INSERT INTO RegistratedUsers(login, pass, accessibility) VALUES
 
 --Add two building
 INSERT INTO Buildings(address, number_floors) VALUES 
-('РФ, г. Москва, ул. Лесная, д.14, к.1', 5),
-('РФ, г. Санкт-Петебург, пр. Косыгина, д.26', 1)
+('Р Р¤, Рі. РњРѕСЃРєРІР°, СѓР». Р›РµСЃРЅР°СЏ, Рґ.14, Рє.1', 5),
+('Р Р¤, Рі. РЎР°РЅРєС‚-РџРµС‚РµР±СѓСЂРі, РїСЂ. РљРѕСЃС‹РіРёРЅР°, Рґ.26', 1)
 
 --Add some employees
 INSERT INTO Employees(first_name, second_name, patronymic, email,
 number_telephone, employee_status, specialization) VALUES
-('Иван', 'Иванов', 'Иванович', 'iii@yandex.ru', '89991234567', 'FREE', 'бухгалтер'),
-('Федор', 'Федоров', 'Федорович', 'fff@gmail.com', '89118765432', 'EMPLOYED', 'программист')
+('РРІР°РЅ', 'РРІР°РЅРѕРІ', 'РРІР°РЅРѕРІРёС‡', 'iii@yandex.ru', '89991234567', 'FREE', 'Р±СѓС…РіР°Р»С‚РµСЂ'),
+('Р¤РµРґРѕСЂ', 'Р¤РµРґРѕСЂРѕРІ', 'Р¤РµРґРѕСЂРѕРІРёС‡', 'fff@gmail.com', '89118765432', 'EMPLOYED', 'РїСЂРѕРіСЂР°РјРјРёСЃС‚')
 
 --Add some zones to building in Moscow
 INSERT INTO Zones(fk_building_id, zone_floor, form, number_zone, zone_type) VALUES
