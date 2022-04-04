@@ -1,109 +1,127 @@
-CREATE TYPE AccessibilityType AS ENUM('ADMIN', 'USER')
+CREATE TYPE accessibility_type AS ENUM('ADMIN', 'USER')
 
-CREATE TABLE RegistratedUsers(
+--DROP TYPE accessibility_type CASCADE
+
+CREATE TABLE registered_user(
 pk_user_id SERIAL PRIMARY KEY,
-login TEXT NOT NULL,
-pass TEXT NOT NULL,
-accessibility AccessibilityType NOT NULL
+user_login TEXT NOT NULL,
+user_password TEXT NOT NULL,
+accessibility_type accessibility_type NOT NULL
 )
 
---DROP TABLE RegistratedUsers CASCADE
+--DROP TABLE registered_user CASCADE
 
 
 
-CREATE TYPE StatusType AS ENUM('FREE', 'EMPLOYED')
-
-CREATE TABLE Employees(
+CREATE TABLE employee(
 pk_employee_id SERIAL PRIMARY KEY,
 first_name TEXT NOT NULL,
 second_name TEXT NOT NULL,
 patronymic TEXT NOT NULL,
 email TEXT NOT NULL,
-number_telephone TEXT NOT NULL,
-employee_status StatusType NOT NULL,
-specialization TEXT NOT NULL -- some checks?
+telephone_number TEXT NOT NULL,
+specialization TEXT NOT NULL,
+picture_link TEXT NOT NULL
 )
 
---DROP TABLE Employees CASCADE
+--DROP TABLE employee CASCADE
 
 
 
-CREATE TABLE Buildings(
+CREATE TABLE building(
 pk_building_id SERIAL PRIMARY KEY,
 address TEXT NOT NULL,
-number_floors INT NOT NULL
+floors_number INT NOT NULL
 )
 
---DROP TABLE Buildings cascade
+--DROP TABLE building CASCADE
 
 
 
-CREATE TYPE ZoneType AS ENUM('CABINET', 'OPENAREA')
+CREATE TYPE floor_type AS ENUM('TECHNICAL', 'OFFICE')
 
-CREATE TABLE Zones(
-pk_zone_id SERIAL PRIMARY KEY,
+--DROP TYPE floor_type CASCADE
+
+CREATE TABLE building_floor(
+pk_floor_id SERIAL PRIMARY KEY,
 fk_building_id INT NOT NULL,
-zone_floor INT NOT NULL,
-form POLYGON NOT NULL,
-number_zone INT NOT NULL UNIQUE,
-zone_type ZoneType NOT NULL,
-description TEXT,
-FOREIGN KEY (fk_building_id) REFERENCES Buildings(pk_building_id) ON DELETE RESTRICT
+floor_number INT NOT NULL,
+floor_type floor_type NOT NULL,
+FOREIGN KEY (fk_building_id) REFERENCES building(pk_building_id) ON DELETE RESTRICT
 )
 
---DROP TABLE Zones cascade
+--DROP TABLE building_floor CASCADE
 
 
 
-CREATE TABLE Timetable(
-pk_session_id SERIAL PRIMARY KEY,
-fk_employee_id INT NOT NULL,
-fk_zone_id INT NOT NULL,
-beginning_session DATE NOT NULL,
-duration_session INT NOT NULL, -- how calculate date with minutes
-FOREIGN KEY (fk_employee_id) REFERENCES Employees(pk_employee_id) ON DELETE RESTRICT,
-FOREIGN KEY (fk_zone_id) REFERENCES Zones(pk_zone_id) ON DELETE RESTRICT
-)
-
---DROP TABLE Timetable cascade
-
-
-
-CREATE TABLE Walls(
+CREATE TABLE wall(
 pk_wall_id SERIAL PRIMARY KEY,
-fk_building_id INT NOT NULL,
+fk_floor_id INT NOT NULL,
 wall_floor INT NOT NULL,
-color TEXT, -- default: gray
+color TEXT,
 form POLYGON NOT NULL,
-FOREIGN KEY (fk_building_id) REFERENCES Buildings(pk_building_id) ON DELETE RESTRICT
+FOREIGN KEY (fk_floor_id) REFERENCES building_floor(pk_floor_id) ON DELETE RESTRICT
 )
 
---DROP TABLE Walls cascade
+--DROP TABLE wall CASCADE
 
 
 
-CREATE TYPE PlacementType AS ENUM('ON_FLOOR', 'ON_ITEM', 'ON_WALL', 'IN_WALL')
+CREATE TABLE floor_zone(
+pk_zone_id SERIAL PRIMARY KEY,
+fk_floor_id INT NOT NULL,
+form POLYGON NOT NULL,
+zone_number INT NOT NULL,
+zone_name TEXT NOT NULL,
+description TEXT,
+FOREIGN KEY (fk_floor_id) REFERENCES building_floor(pk_floor_id) ON DELETE RESTRICT
+)
 
-CREATE TABLE ItemType(
+--DROP TABLE floor_zone CASCADE
+
+
+
+CREATE TYPE placement_type AS ENUM('ON_FLOOR', 'ON_ITEM', 'ON_WALL', 'IN_WALL')
+
+--DROP TYPE placement_type CASCADE
+
+CREATE TABLE item_type(
 pk_item_type_id SERIAL PRIMARY KEY,
 item_name TEXT NOT NULL,
-placement PlacementType NOT NULL,
+placement_type placement_type NOT NULL,
 form POLYGON NOT NULL,
 picture_link TEXT NOT NULL,
 description TEXT
 )
 
---DROP TABLE ItemType cascade
+--DROP TABLE item_type CASCADE
 
 
 
-CREATE TABLE Items(
+CREATE TABLE item(
 pk_item_id SERIAL PRIMARY KEY,
 fk_zone_id INT NOT NULL,
 fk_item_type_id INT NOT NULL,
 pos POINT NOT NULL,
-angle INT, -- default: 0
-FOREIGN KEY (fk_item_type_id) REFERENCES ItemType(pk_item_type_id) ON DELETE RESTRICT
+angle INT,
+FOREIGN KEY (fk_zone_id) REFERENCES floor_zone(pk_zone_id) ON DELETE RESTRICT,
+FOREIGN KEY (fk_item_type_id) REFERENCES item_type(pk_item_type_id) ON DELETE RESTRICT
 )
 
---DROP TABLE Items cascade
+--DROP TABLE item CASCADE
+
+
+
+CREATE TABLE workplace_item(
+pk_workplace_item_id SERIAL PRIMARY KEY,
+fk_zone_id INT NOT NULL,
+fk_item_type_id INT NOT NULL,
+array_fk_employee_id INT[],
+pos POINT NOT NULL,
+angle INT NOT NULL,
+FOREIGN KEY (fk_zone_id) REFERENCES floor_zone,
+FOREIGN KEY (fk_item_type_id) REFERENCES item_type
+--FOREIGN KEY (EACH ELEMENT OF array_fk_employee_id) REFERENCES employee
+)
+
+--DROP TABLE workplace_item CASCADE
