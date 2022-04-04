@@ -53,13 +53,16 @@ FOREIGN KEY (fk_building_id) REFERENCES building(pk_building_id) ON DELETE RESTR
 --DROP TABLE building_floor CASCADE
 
 
+CREATE TYPE wall_type AS ENUM('VIRTUAL', 'PHYSICAL')
+
+--DROP TYPE wall_type CASCADE
 
 CREATE TABLE wall(
 pk_wall_id SERIAL PRIMARY KEY,
 fk_floor_id INT NOT NULL,
-wall_floor INT NOT NULL,
 color TEXT,
 form POLYGON NOT NULL,
+wall_type wall_type NOT NULL,
 FOREIGN KEY (fk_floor_id) REFERENCES building_floor(pk_floor_id) ON DELETE RESTRICT
 )
 
