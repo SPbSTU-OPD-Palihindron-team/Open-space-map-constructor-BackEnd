@@ -115,16 +115,19 @@ FOREIGN KEY (fk_item_type_id) REFERENCES item_type(pk_item_type_id) ON DELETE RE
 
 
 
-CREATE TABLE workplace_item(
-pk_workplace_item_id SERIAL PRIMARY KEY,
-fk_zone_id INT NOT NULL,
-fk_item_type_id INT NOT NULL,
-array_fk_employee_id INT[],
-pos POINT NOT NULL,
-angle INT NOT NULL,
-FOREIGN KEY (fk_zone_id) REFERENCES floor_zone,
-FOREIGN KEY (fk_item_type_id) REFERENCES item_type
---FOREIGN KEY (EACH ELEMENT OF array_fk_employee_id) REFERENCES employee
+CREATE TABLE workplace_item_employee_relation(
+pk_relation_id SERIAL PRIMARY KEY,
+fk_employee_id INT NOT NULL,
+FOREIGN KEY (fk_employee_id) REFERENCES employee(pk_employee_id) ON DELETE RESTRICT
 )
+
+--DROP TABLE workplace_item_employee_relation CASCADE
+
+
+
+CREATE TABLE workplace_item (
+fk_relation_id INT NOT NULL,
+FOREIGN KEY (fk_relation_id) REFERENCES workplace_item_employee_relation(pk_relation_id) ON DELETE RESTRICT
+) INHERITS (item)
 
 --DROP TABLE workplace_item CASCADE
