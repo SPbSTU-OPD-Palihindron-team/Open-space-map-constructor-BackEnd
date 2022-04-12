@@ -89,7 +89,7 @@
     <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>logging-interceptor</artifactId>
-      <version>3.12.1</version>
+      <version>4.9.3</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.threeten/threetenbp -->
     <dependency>
@@ -116,22 +116,31 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>6.13.1</version>
+      <version>7.5</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.13.1</version>
+      <version>4.13.2</version>
     </dependency>
-    <!-- Hibernate ORM specific dependencies -->
+    <!-- https://mvnrepository.com/artifact/io.swagger/swagger-jaxrs -->
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-hibernate-orm</artifactId>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-jaxrs</artifactId>
+      <version>1.6.6</version>
     </dependency>
-    <!-- JDBC driver dependencies -->
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-joda -->
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-postgresql</artifactId>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-joda</artifactId>
+      <version>2.13.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
   <build>
@@ -183,10 +192,17 @@
             </goals>
             <configuration>
               <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
-              <generatorName>java</generatorName>
+              <generatorName>jaxrs-resteasy</generatorName>
               <configOptions>
+                <packageName>org.openspace_map</packageName>
+                <apiPackage>org.openspace_map.api</apiPackage>
+                <modelPackage>org.openspace_map.model</modelPackage>
+                <configHelp>true</configHelp>
+                <delegatePattern>true</delegatePattern>
                 <sourceFolder>src/gen/java/main</sourceFolder>
-                <generateSupportingFiles>true</generateSupportingFiles>
+<!--                <generateSupportingFiles>true</generateSupportingFiles>-->
+                <interfaceOnly>true</interfaceOnly>
+                <implFolder>${project.basedir}/src/main/java/org/openspace_map/</implFolder>
               </configOptions>
             </configuration>
           </execution>
