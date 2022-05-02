@@ -1,3 +1,6 @@
+--link to container
+--https://hub.docker.com/repository/docker/krzhld/open-map-db
+
 --Add admin and usual user
 INSERT INTO registered_user(user_login, user_password, accessibility_type) VALUES
 ('mark123', 'hardpassword', 'ADMIN'),
