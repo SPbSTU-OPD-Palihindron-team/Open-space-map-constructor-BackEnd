@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class FloorZone {
     @Id
     @GeneratedValue
+    @Column(name = "pk_zone_id", nullable = false)
     private IntegerType zone_id;
     @Column(nullable = false)
     private StringType form;

@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue
+    @Column(name = "pk_employee_id", nullable = false)
     private IntegerType primary_key;
     @Column(nullable = false)
     private StringType first_name;

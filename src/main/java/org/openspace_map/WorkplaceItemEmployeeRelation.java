@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class WorkplaceItemEmployeeRelation {
     @Id
     @GeneratedValue
+    @Column(name = "pk_relation_id", nullable = false)
     private IntegerType relation_id;
     @ManyToOne
     @JoinColumn(name = "employee_id", foreignKey = @ForeignKey(name = "EMPLOYEE_ID_FK")) private Employee employee_id;

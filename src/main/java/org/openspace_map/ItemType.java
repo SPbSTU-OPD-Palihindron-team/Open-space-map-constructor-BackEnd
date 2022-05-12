@@ -9,10 +9,12 @@ import javax.persistence.*;
 public class ItemType {
     @Id
     @GeneratedValue
+    @Column(name = "pk_item_type_id", nullable = false)
     private IntegerType item_type_id;
     @Column(nullable = false)
     private StringType item_name;
     @Column(nullable = false)
+    @Enumerated(javax.persistence.EnumType.STRING)
     private PlacementType placement_type;
     @Column(nullable = false)
     private StringType form;

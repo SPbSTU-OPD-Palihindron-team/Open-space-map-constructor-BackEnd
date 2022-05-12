@@ -15,5 +15,6 @@ public class RegisteredUsers {
     @Column(nullable = false)
     private StringType user_password;
     @Column(nullable = false)
+    @Enumerated(javax.persistence.EnumType.STRING)
     private AccessibilityType accessibility_type;
 }
