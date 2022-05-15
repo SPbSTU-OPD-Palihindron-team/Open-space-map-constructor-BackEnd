@@ -2,6 +2,7 @@ package org.openspace_map;
 
 import com.vividsolutions.jts.geom.Point;
 import javax.persistence.*;
+import java.awt.*;
 
 
 @Entity
@@ -26,6 +27,10 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "item_type_id", foreignKey = @ForeignKey(name = "item_item_type_id_fkey"))
     private ItemType item_type;
+
+    public Integer getId() {return id;}
+
+    public void setId(Integer id) {this.id = id;}
 
     public Point getPos() {
         return pos;
