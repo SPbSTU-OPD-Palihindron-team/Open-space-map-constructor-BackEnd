@@ -28,6 +28,10 @@ public class Item {
     @JoinColumn(name = "item_type_id", foreignKey = @ForeignKey(name = "item_item_type_id_fkey"))
     private ItemType item_type;
 
+    public Item() {}
+
+    public Item(int id) {this.id = id;}
+
     public Integer getId() {return id;}
 
     public void setId(Integer id) {this.id = id;}
