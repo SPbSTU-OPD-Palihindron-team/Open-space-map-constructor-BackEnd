@@ -1,6 +1,6 @@
 package org.openspace_map;
 
-import org.hibernate.type.*;
+import com.vividsolutions.jts.geom.Polygon;
 import javax.persistence.*;
 
 
@@ -9,15 +9,57 @@ import javax.persistence.*;
 public class FloorZone {
     @Id
     @GeneratedValue
-    private IntegerType zone_id;
-    @Column(nullable = false)
-    private StringType form;
-    @Column(nullable = false)
-    private IntegerType zone_number;
-    @Column(nullable = false)
-    private StringType zone_name;
-    @Column(nullable = true)
-    private StringType description;
+    private Integer id;
+    
+    private Polygon form;
+    
+    private Integer number;
+    
+    private String name;
+    
+    private String description;
+
     @ManyToOne
-    @JoinColumn(name = "floor_id", foreignKey = @ForeignKey(name = "FLOOR_ID_FK")) private BuildingFloor floor_id;
+    @JoinColumn(name = "floor_id", foreignKey = @ForeignKey(name = "floor_zone_floor_id_fkey"))
+    private BuildingFloor floor;
+
+    public Polygon getForm() {
+        return form;
+    }
+
+    public void setForm(Polygon form) {
+        this.form = form;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BuildingFloor getFloor() {
+        return floor;
+    }
+
+    public void setFloor(BuildingFloor floor) {
+        this.floor = floor;
+    }
 }

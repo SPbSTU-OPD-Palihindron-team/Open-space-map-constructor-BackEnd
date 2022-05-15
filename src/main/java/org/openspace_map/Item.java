@@ -1,6 +1,6 @@
 package org.openspace_map;
 
-import org.hibernate.type.*;
+import com.vividsolutions.jts.geom.Point;
 import javax.persistence.*;
 
 
@@ -9,13 +9,69 @@ import javax.persistence.*;
 public class Item {
     @Id
     @GeneratedValue
-    private IntegerType item_id;
-    @Column(nullable = false)
-    private StringType pos;
-    @Column(nullable = false)
-    private IntegerType angle;
+    private Integer id;
+    
+    private Point pos;
+    
+    private Integer angle;
+
+    private Float scale;
+
+    private Boolean is_workplace;
+
     @ManyToOne
-    @JoinColumn(name = "zone_id", foreignKey = @ForeignKey(name = "ZONE_ID_FK")) private FloorZone zone_id;
+    @JoinColumn(name = "zone_id", foreignKey = @ForeignKey(name = "item_zone_id_fkey"))
+    private FloorZone zone;
+
     @ManyToOne
-    @JoinColumn(name = "item_type_id", foreignKey = @ForeignKey(name = "ITEM_TYPE_ID_FK")) private ItemType item_type_id;
+    @JoinColumn(name = "item_type_id", foreignKey = @ForeignKey(name = "item_item_type_id_fkey"))
+    private ItemType item_type;
+
+    public Point getPos() {
+        return pos;
+    }
+
+    public void setPos(Point pos) {
+        this.pos = pos;
+    }
+
+    public Integer getAngle() {
+        return angle;
+    }
+
+    public void setAngle(Integer angle) {
+        this.angle = angle;
+    }
+
+    public Float getScale() {
+        return scale;
+    }
+
+    public void setScale(Float scale) {
+        this.scale = scale;
+    }
+
+    public Boolean getIsWorkplace() {
+        return is_workplace;
+    }
+
+    public void setIsWorkplace(Boolean is_workplace) {
+        this.is_workplace = is_workplace;
+    }
+
+    public FloorZone getZone() {
+        return zone;
+    }
+
+    public void setZone(FloorZone zone) {
+        this.zone = zone;
+    }
+
+    public ItemType getItemType() {
+        return item_type;
+    }
+
+    public void setItemType(ItemType item_type) {
+        this.item_type = item_type;
+    }
 }

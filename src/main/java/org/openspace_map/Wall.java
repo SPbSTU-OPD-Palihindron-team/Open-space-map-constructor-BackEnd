@@ -1,6 +1,5 @@
 package org.openspace_map;
 
-import org.hibernate.type.*;
 import javax.persistence.*;
 
 
@@ -9,13 +8,48 @@ import javax.persistence.*;
 public class Wall {
     @Id
     @GeneratedValue
-    private IntegerType wall_id;
-    @Column(nullable = false)
-    private StringType color;
-    @Column(nullable = false)
-    private StringType form;
-    @Column(nullable = false)
-    private WallType wall_type;
+    private Integer id;
+    
+    private String color;
+    
+    private String form;
+    
+    @Enumerated(javax.persistence.EnumType.STRING)
+    private WallType type;
+
     @ManyToOne
-    @JoinColumn(name = "floor_id", foreignKey = @ForeignKey(name = "FLOOR_ID_FK")) private BuildingFloor floor_id;
+    @JoinColumn(name = "floor_id", foreignKey = @ForeignKey(name = "wall_floor_id_fkey"))
+    private BuildingFloor floor;
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getForm() {
+        return form;
+    }
+
+    public void setForm(String form) {
+        this.form = form;
+    }
+
+    public WallType getType() {
+        return type;
+    }
+
+    public void setType(WallType type) {
+        this.type = type;
+    }
+
+    public BuildingFloor getFloor() {
+        return floor;
+    }
+
+    public void setFloor(BuildingFloor floor) {
+        this.floor = floor;
+    }
 }
