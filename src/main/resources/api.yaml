@@ -415,19 +415,15 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
       description: Get list of all Items
       security:
         - apiKey: [ ]
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                itemList:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/Item'
     post:
       summary: POST endpoint.
       operationId: post-items-save
