@@ -881,12 +881,18 @@ components:
           items:
             type: object
             properties:
-              x:
-                type: number
-              'y':
-                type:
-                  - string
-                  - number
+              point:
+                type: object
+                properties:
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                required:
+                  - x
+                  - y
+            required:
+              - point
         wallType:
           type: string
       required:
