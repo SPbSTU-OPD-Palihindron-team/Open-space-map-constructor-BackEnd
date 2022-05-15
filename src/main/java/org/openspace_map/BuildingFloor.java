@@ -1,6 +1,5 @@
 package org.openspace_map;
 
-import org.hibernate.type.IntegerType;
 import javax.persistence.*;
 
 
@@ -9,11 +8,38 @@ import javax.persistence.*;
 public class BuildingFloor {
     @Id
     @GeneratedValue
-    private IntegerType floor_id;
-    @Column(nullable = false)
-    private IntegerType floor_number;
-    @Column(nullable = false)
-    private FloorType floor_type;
+    private Integer id;
+    
+    private Integer floor_number;
+    
+    @Enumerated(javax.persistence.EnumType.STRING)
+    private FloorType type;
+
     @ManyToOne
-    @JoinColumn(name = "building_id", foreignKey = @ForeignKey(name = "BUILDING_ID_FK")) private Building building_id;
+    @JoinColumn(name = "building_id", foreignKey = @ForeignKey(name = "building_floor_building_id_fkey"))
+    private Building building;
+
+    public Integer getFloorNumber() {
+        return this.floor_number;
+    }
+
+    public void setFloorNumber(Integer num) {
+        this.floor_number = num;
+    }
+
+    public FloorType getFloorType() {
+        return this.type;
+    }
+
+    public void setFloorType(FloorType type) {
+        this.type = type;
+    }
+
+    public Building getBuilding() {
+        return this.building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
+    }
 }

@@ -1,7 +1,5 @@
 package org.openspace_map;
 
-import org.hibernate.type.*;
-
 import javax.persistence.*;
 
 
@@ -10,9 +8,25 @@ import javax.persistence.*;
 public class Building {
     @Id
     @GeneratedValue
-    private IntegerType pk_building_id;
-    @Column(nullable = false)
-    private StringType address;
-    @Column(nullable = false)
-    private IntegerType floors_number;
+    private Integer id;
+
+    private String address;
+    
+    private Integer floors_number;
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setFloorsNumber(Integer num) {
+        this.floors_number = num;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public Integer getFloorsNumber() {
+        return this.floors_number;
+    }
 }

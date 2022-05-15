@@ -134,6 +134,22 @@
       <artifactId>quarkus-jdbc-postgresql</artifactId>
     </dependency>
   </dependencies>
+  <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-spatial</artifactId>
+      <version>5.2.16.Final</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.vividsolutions/jts -->
+    <dependency>
+      <groupId>com.vividsolutions</groupId>
+      <artifactId>jts</artifactId>
+      <version>1.13</version>
+    </dependency>
+    <dependency>
+      <groupId>com.vividsolutions</groupId>
+      <artifactId>jts-core</artifactId> 
+      <version>1.14.0</version>
+    </dependency>
   <build>
     <plugins>
       <plugin>
