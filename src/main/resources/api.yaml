@@ -91,10 +91,11 @@ paths:
         - apiKey: []
     parameters:
       - schema:
-          type: string
+          type: integer
         name: employee_id
         in: path
         required: true
+        description: id of employee
     post:
       summary: POST endpoint
       operationId: post-employee-employee_id
@@ -280,17 +281,19 @@ paths:
         - apiKey: []
     parameters:
       - schema:
-          type: string
+          type: integer
         name: floor_id
         in: path
         required: true
+        description: id of the floor
   '/floor/{floor_id}/walls':
     parameters:
       - schema:
-          type: string
+          type: integer
         name: floor_id
         in: path
         required: true
+        description: id of the floor
     get:
       summary: GET endpoint
       responses:
@@ -318,10 +321,11 @@ paths:
   '/floor/{floor_id}':
     parameters:
       - schema:
-          type: string
+          type: integer
         name: floor_id
         in: path
         required: true
+        description: id of the floor
     delete:
       summary: DELETE endpoint.
       operationId: delete-floor-building_id-delete
@@ -456,10 +460,11 @@ paths:
         - apiKey: []
     parameters:
       - schema:
-          type: string
+          type: integer
         name: zone_id
         in: path
         required: true
+        description: id of the zone
   '/wall/{wall_id}':
     put:
       summary: PUT endpoint
@@ -486,10 +491,11 @@ paths:
         - apiKey: []
     parameters:
       - schema:
-          type: string
+          type: integer
         name: wall_id
         in: path
         required: true
+        description: id of the wall
     delete:
       summary: DELETE endpoint
       operationId: delete-wall-wall_id
@@ -875,18 +881,12 @@ components:
           items:
             type: object
             properties:
-              point:
-                type: object
-                required:
-                  - x
-                  - 'y'
-                properties:
-                  x:
-                    type: integer
-                  'y':
-                    type: integer
-            required:
-              - point
+              x:
+                type: number
+              'y':
+                type:
+                  - string
+                  - number
         wallType:
           type: string
       required:
@@ -906,18 +906,10 @@ components:
           items:
             type: object
             properties:
-              point:
-                type: object
-                required:
-                  - x
-                  - 'y'
-                properties:
-                  x:
-                    type: integer
-                  'y':
-                    type: integer
-            required:
-              - point
+              x:
+                type: number
+              'y':
+                type: number
         wallType:
           type: string
       required:
@@ -955,6 +947,9 @@ components:
         angle:
           type: number
           format: float
+        scale:
+          type: number
+          format: float
         itemType:
           $ref: '#/components/schemas/ItemType'
       required:
@@ -962,6 +957,7 @@ components:
         - floor_id
         - point
         - angle
+        - scale
         - itemType
     Item-entity:
       title: Item-entity
@@ -995,11 +991,15 @@ components:
         angle:
           type: number
           format: float
+        scale:
+          type: number
+          format: float
       required:
         - zone_id
         - itemType_id
         - point
         - angle
+        - scale
     WorkspaceItem:
       title: WorkspaceItem
       type: object
@@ -1032,6 +1032,9 @@ components:
         angle:
           type: number
           format: float
+        scale:
+          type: number
+          format: float
         itemType:
           $ref: '#/components/schemas/ItemType'
         emploeyes:
@@ -1043,6 +1046,7 @@ components:
         - floor_id
         - point
         - angle
+        - scale
         - itemType
     ItemType:
       title: ItemType
