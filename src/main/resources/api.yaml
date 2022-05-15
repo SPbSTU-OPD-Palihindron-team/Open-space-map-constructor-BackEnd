@@ -409,6 +409,25 @@ paths:
       security:
         - apiKey: []
   /items:
+    get:
+      summary: GET endpoint.
+      operationId: get-items
+      responses:
+        '200':
+          description: OK
+      description: Get list of all Items
+      security:
+        - apiKey: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                itemList:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Item'
     post:
       summary: POST endpoint.
       operationId: post-items-save
