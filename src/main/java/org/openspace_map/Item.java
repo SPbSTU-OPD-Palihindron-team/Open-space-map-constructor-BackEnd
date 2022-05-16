@@ -1,8 +1,9 @@
 package org.openspace_map;
 
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Point;
 import javax.persistence.*;
-import java.awt.*;
 
 
 @Entity
@@ -14,7 +15,7 @@ public class Item {
     
     private Point pos;
     
-    private Integer angle;
+    private Float angle;
 
     private Float scale;
 
@@ -30,6 +31,15 @@ public class Item {
 
     public Item() {}
 
+    public Item(org.openspace_map.model.Item item){
+        GeometryFactory geometryFactory = new GeometryFactory();
+        id = item.getItemId();
+        pos = geometryFactory.createPoint(new Coordinate(item.getPoint().getX(), item.getPoint().getY()));
+        angle = item.getAngle();
+        scale = item.getScale();
+        is_workplace = false;
+    }
+
     public Item(int id) {this.id = id;}
 
     public Integer getId() {return id;}
@@ -44,11 +54,11 @@ public class Item {
         this.pos = pos;
     }
 
-    public Integer getAngle() {
+    public Float getAngle() {
         return angle;
     }
 
-    public void setAngle(Integer angle) {
+    public void setAngle(Float angle) {
         this.angle = angle;
     }
 
