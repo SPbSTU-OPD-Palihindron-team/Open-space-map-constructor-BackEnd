@@ -2,7 +2,6 @@ package org.openspace_map;
 import org.openspace_map.api.ItemsApiService;
 import org.openspace_map.api.NotFoundException;
 import org.openspace_map.model.InlineObject4;
-import org.openspace_map.model.Item;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -35,8 +34,8 @@ public class ItemsService implements ItemsApiService{
     public Response postItemsSave(InlineObject4 inlineObject4, SecurityContext securityContext) throws NotFoundException {
         try {
             em.getTransaction().begin();
-            for (Item item : inlineObject4.getItemList()){
-                em.persist(item);
+            for (org.openspace_map.model.Item item : inlineObject4.getItemList()){
+                em.persist(new org.openspace_map.Item(item));
             }
             em.getTransaction().commit();
             return Response.ok().build();
