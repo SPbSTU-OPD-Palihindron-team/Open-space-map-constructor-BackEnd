@@ -409,6 +409,21 @@ paths:
       security:
         - apiKey: []
   /items:
+    get:
+      summary: GET endpoint.
+      operationId: get-items
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+      description: Get list of all Items
+      security:
+        - apiKey: [ ]
     post:
       summary: POST endpoint.
       operationId: post-items-save
@@ -881,12 +896,18 @@ components:
           items:
             type: object
             properties:
-              x:
-                type: number
-              'y':
-                type:
-                  - string
-                  - number
+              point:
+                type: object
+                properties:
+                  x:
+                    type: integer
+                  y:
+                    type: integer
+                required:
+                  - x
+                  - y
+            required:
+              - point
         wallType:
           type: string
       required:
