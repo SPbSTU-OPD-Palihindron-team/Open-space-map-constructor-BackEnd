@@ -19,6 +19,10 @@ public class BuildingFloor {
     @JoinColumn(name = "building_id", foreignKey = @ForeignKey(name = "building_floor_building_id_fkey"))
     private Building building;
 
+    public BuildingFloor(Integer floor_number) {
+        this.floor_number = floor_number;
+    }
+
     public Integer getFloorNumber() {
         return this.floor_number;
     }

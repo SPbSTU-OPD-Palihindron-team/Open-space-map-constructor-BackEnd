@@ -14,6 +14,11 @@ public class Building {
     
     private Integer floors_number;
 
+    public Building(org.openspace_map.model.BuildingEntity building) {
+        address = building.getAddress();
+        floors_number = building.getNumberFloors();
+    }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -28,5 +33,13 @@ public class Building {
 
     public Integer getFloorsNumber() {
         return this.floors_number;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
